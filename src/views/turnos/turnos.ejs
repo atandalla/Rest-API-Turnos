@@ -1,0 +1,46 @@
+<%- include ('../partials/header.ejs') %>
+    <%- include ('../partials/navigation.ejs') %>
+
+
+        <!-- ======= Facts Section ======= -->
+        <section id="facts" class="facts">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Turnos</h2>
+                    <p>Para atender al cliente y asignarle un número presione el botón ENVIAR.</p>
+                </div>
+
+                <div class="row" style="justify-content: center;">
+
+                    <form action="/reporte/nuevoTurno" method="POST">
+                        <div class="col-lg-12 col-md-12 mt-5 mt-lg-0">
+                            <div class="count-box">
+                                <i class="icofont-live-support"></i>
+                                <span data-toggle="counter-up"><%= cont+1 %></span>
+
+                                <input type="hidden" name="numCaja" value="<%= cont+1 %>">
+                                <p>Número Asignado</p>
+                                <div class="mt-5">
+                                    <button class="btn btn-primary" type="submit">
+                                                ENVIAR
+                                        </button>
+                                    <a class="btn btn-primary" href="/turnosR">REINICIAR CUENTA</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+
+
+
+
+                </div>
+
+            </div>
+        </section>
+        <!-- End Facts Section -->
+
+        <!-- End #main -->
+
+        <%- include ('../partials/footer.ejs') %>
